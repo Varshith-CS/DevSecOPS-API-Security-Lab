@@ -4,8 +4,3 @@ __pycache__/
 .DS_Store
 .env
 *.log
-
-# Generated security reports
-reports/*.json
-reports/*.html
-reports/*.sarif

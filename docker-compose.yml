@@ -1,11 +1,21 @@
 services:
   vulnerable-api:
     build: .
-    container_name: devsecops-api-security-lab
-    ports:
-      - "8000:8000"
+    container_name: devsecops-api-security-lab-api
+    expose:
+      - "8000"
     env_file:
       - .env
     environment:
-      - FLASK_ENV=development
+      - FLASK_ENV=production
       - FLASK_HOST=0.0.0.0
+
+  nginx:
+    image: nginx:alpine
+    container_name: devsecops-api-security-lab-nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - vulnerable-api
