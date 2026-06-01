@@ -6,6 +6,22 @@ This project demonstrates a complete DevSecOps workflow by building, testing, se
 
 The project begins with intentionally insecure API endpoints and progresses through vulnerability discovery, automated security scanning, remediation, validation, and security automation using industry-standard DevSecOps tools.
 
+---
+
+## Architecture
+
+![Architecture Diagram](architecture/devsecops-api-security-lab-architecture.png)
+
+### Architecture Components
+
+* User / Tester
+* Nginx Reverse Proxy
+* Flask API (Docker)
+* JWT Authentication
+* Role-Based Access Control (RBAC)
+* Environment Variable Secret Management
+* GitHub Actions Security Pipeline
+* OWASP ZAP Runtime Validation
 
 ---
 
@@ -122,7 +138,7 @@ Identified:
 
 ---
 
-### OWASP ZAP (DAST)
+### OWASP ZAP
 
 Identified:
 
