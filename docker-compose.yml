@@ -1,0 +1,8 @@
+services:
+  vulnerable-api:
+    build: .
+    container_name: devsecops-api-security-lab
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=development
