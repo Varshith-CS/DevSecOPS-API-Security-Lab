@@ -4,5 +4,8 @@ services:
     container_name: devsecops-api-security-lab
     ports:
       - "8000:8000"
+    env_file:
+      - .env
     environment:
       - FLASK_ENV=development
+      - FLASK_HOST=0.0.0.0
